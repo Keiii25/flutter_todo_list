@@ -2,6 +2,10 @@
 
 An application that allows user to add and save to-do items and record the item's progress.
 
+## Requirements
+Flutter : Version 2.12 or above
+Java : Version 11 or above
+
 ## Working with Translations 🌐
 
 This project relies on [flutter_localizations][https://docs.flutter.dev/development/accessibility-and-localization/internationalization]
