@@ -1,8 +1,13 @@
 import 'dart:ui';
 
-const kYellowFFE259 = Color(0xffFFE259);
-const kOrangeFFA751 = Color(0xffFFA751);
-const kGreyA0A1A0 = Color(0xffa0a1a0);
-const kBlack = Color(0xff000000);
+const kBlack00293E = Color(0xff00293E);
+const kLightGreyEFEFEF = Color(0xffefefef);
+const kYellowFEBD23 = Color(0xfffebd23);
+const kOrangeEF571F = Color(0xffef571f);
+const kLightYellowEF571F = Color(0xffef571f);
+const kLightBrownE5E2CF = Color(0xffe5e2cf);
+const kGrey8C8C8C = Color(0xff8c8c8c);
+const kLightGreyB0B0B0 = Color(0xffb0b0b0);
+
 
 const kLanguagePreferenceKey = 'languagePreference';

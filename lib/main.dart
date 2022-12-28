@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_todo_list/todo_list/controllers/todo_controller.dart';
+import 'package:flutter_todo_list/todo_list/view/pages/add_todo_item_page.dart';
+import 'package:flutter_todo_list/todo_list/view/pages/todo_list_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 
@@ -19,13 +22,15 @@ App({ Key? key }) : super(key: key);
 
   final localeController = LocaleController();
   final sharedPreferencesController = SharedPreferencesController();
+  final todoController = TodoController();
 
   @override
   Widget build(BuildContext context) {
     _setupLocaleController();
     Get
     ..put(localeController, permanent: true)
-    ..put(sharedPreferencesController, permanent: true);
+    ..put(sharedPreferencesController, permanent: true)
+    ..put(todoController, permanent: true);
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -43,7 +48,12 @@ App({ Key? key }) : super(key: key);
         ],
         supportedLocales: AppLocalizations.supportedLocales,
         initialRoute: AppRoute.root.path,
-        getPages: [],
+        getPages: [
+          GetPage<void>(
+              name: AppRoute.root.path, page: () => const TodoListPage()),
+          GetPage<void>(
+              name: AppRoute.addTodoItem.path, page: () => const AddTodoItemPage()),
+        ],
     );
 
     

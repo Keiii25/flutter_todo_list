@@ -1,6 +1,22 @@
 {
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-      "description": "The conventional newborn programmer greeting"
-    }
+    "todoList" : "To-Do List",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "timeLeft": "Time Left",
+    "status": "Status",
+    "complete" : "Complete",
+    "incomplete" : "Incomplete",
+    "tickIfCompleted": "Tick if completed",
+    "addNewTodoList" : "Add New To-Do List",
+    "todoTitle" : "To-Do Title",
+    "estimatedEndDate" : "Estimated End Date",
+    "pleaseKeyInYourTodoTitleHere": "Please key in your To-Do title here",
+    "selectADate": "Select a date",
+    "createNow" : "Create Now",
+    "confirmChanges" : "Confirm Changes",
+    "hours" : "hrs",
+    "minutes" : "min",
+    "noTodoItems" :"No To-do Items",
+    "pleaseEnterATitle" : "Please enter a title",
+    "pleaseEnterADate": "PleaseEnterADate"
 }
