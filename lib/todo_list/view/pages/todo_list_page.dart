@@ -37,8 +37,8 @@ class _TodoListPageState extends State<TodoListPage> {
                     itemCount: todoList.length,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, int index) {
-                      return todoList.length <= 0
-                          ? Center(child: Text(l10n.noTodoItems))
+                      return  todoList.length <= 0
+                          ? Center(child: Text(l10n.noTodoItems, style: TextStyle(fontSize: 16, color: Colors.black.withOpacity(0.8)),))
                           : Column(
                               children: [
                                 InkWell(
