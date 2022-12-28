@@ -247,6 +247,7 @@ class _TodoListPageState extends State<TodoListPage> {
   }
 }
 
+// ignore: must_be_immutable
 class CountDownTimer extends StatelessWidget {
   CountDownTimer({
     Key? key,
@@ -264,7 +265,6 @@ class CountDownTimer extends StatelessWidget {
     return StreamBuilder(
       stream: Stream.periodic(const Duration(minutes: 1)),
       builder: (context, snapshot) {
-        Duration duration = endDate.difference(startDate);
         return Text(
             endDate.difference(startDate.isAfter(DateTime.now()) ? startDate : DateTime.now()).inHours.toString() +
                 l10n.hours +
@@ -279,3 +279,5 @@ class CountDownTimer extends StatelessWidget {
     );
   }
 }
+
+

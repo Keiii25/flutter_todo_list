@@ -11,3 +11,4 @@ const kLightGreyB0B0B0 = Color(0xffb0b0b0);
 
 
 const kLanguagePreferenceKey = 'languagePreference';
+const kTodoListKey = 'todoList';

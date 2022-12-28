@@ -16,12 +16,13 @@ class AddTodoItemPage extends StatefulWidget {
 }
 
 class _AddTodoItemPageState extends State<AddTodoItemPage> {
+  bool edit = false; //indicate status of editing todo item action
   final _formKey = GlobalKey<FormState>();
 
   String? title;
   DateTime? _startDate;
   DateTime? _endDate;
-  bool edit = false;
+
   final TextEditingController _todoTitleController = TextEditingController();
   final TextEditingController _startDateController = TextEditingController();
   final TextEditingController _endDateController = TextEditingController();
@@ -38,6 +39,7 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
 
   @override
   void initState() {
+    //Initialise text fields with the corespondings value during editing of todo item
     edit = Get.arguments['edit'] ?? false;
     final todoList = todoController.todoList;
     final selectedIndex = todoController.selectedItemIndex.value;
@@ -58,7 +60,6 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-
     return Scaffold(
         appBar: GenericAppBar(title: l10n.addNewTodoList),
         body: Form(
@@ -163,7 +164,6 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
   void onConfirmChangesButtonPressed() {
     final state = _formKey.currentState;
     if (state != null && state.validate()) {
-      final todoController = Get.find<TodoController>()..context = context;
       todoController.editTodoItem(
           _todoTitleController.text, _startDate!, _endDate!);
       Get.back<void>();
@@ -173,7 +173,6 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
   void onCreateNowButtonPressed() {
     final state = _formKey.currentState;
     if (state != null && state.validate()) {
-      final todoController = Get.find<TodoController>()..context = context;
       todoController.addTodoItem(
           _todoTitleController.text, _startDate!, _endDate!);
 
@@ -188,7 +187,7 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
       String formattedDate = DateFormat('dd MMM yyyy HH:mm aaa').format(date);
 
       setState(() {
-        _startDateController.text = formattedDate;
+        _startDateController.text = formattedDate; //display date in text field
       });
     });
   }
@@ -199,7 +198,7 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
       _endDate = date;
       String formattedDate = DateFormat('dd MMM yyyy HH:mm aaa').format(date);
       setState(() {
-        _endDateController.text = formattedDate;
+        _endDateController.text = formattedDate; //display date in text field
       });
     });
   }

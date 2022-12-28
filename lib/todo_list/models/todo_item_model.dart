@@ -3,7 +3,7 @@ class TodoItemModel {
     required this.name,
     required this.startDate,
     required this.endDate,
-    this.status = false
+    required this.status,
   });
 
   String name;
