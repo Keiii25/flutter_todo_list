@@ -4,7 +4,7 @@ An application that allows user to add and save to-do items and record the item'
 
 ## Working with Translations 🌐
 
-This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
+This project relies on [flutter_localizations][https://docs.flutter.dev/development/accessibility-and-localization/internationalization]
 
 ### Adding Strings
 

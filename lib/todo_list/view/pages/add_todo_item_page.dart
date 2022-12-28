@@ -62,6 +62,7 @@ class _AddTodoItemPageState extends State<AddTodoItemPage> {
     final l10n = context.l10n;
     return Scaffold(
         appBar: GenericAppBar(title: l10n.addNewTodoList),
+        resizeToAvoidBottomInset: false,
         body: Form(
             key: _formKey,
             child: Column(
